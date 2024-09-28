@@ -16,17 +16,11 @@
 
 用cat /proc/1/status查看了一下ocr进程的cpu affinity设置，发现被绑定到了cpu 0，初步猜想是ocr服务在代码中进行了设置。
 
-
-
 <img src="images/image-20240928140750360.png" alt="image-20240928140750360" align='left' width="300" />
-
-
 
 进一步用strace和gdb查看是否存在对sched_setaffinity的系统调用，发现确实存在：
 
 <img src="images/image-20240928141230444.png" align='left' alt="image-20240928141230444" width="500" />
-
-
 
 <img src="images/image-20240928141328711.png" alt="image-20240928141328711" width="800" align="left"/>
 
