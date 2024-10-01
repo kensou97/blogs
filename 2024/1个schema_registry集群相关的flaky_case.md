@@ -10,7 +10,7 @@
 
 - 实例1：监听http://0.0.0.0:8081
 - 实例2：监听https://0.0.0.0:8082
-- 实例3：监听https://0.0.0.0:8083，同时配置ssl.client.auth=true，也就是需要双向校验证书
+- 实例3：监听https://0.0.0.0:8083, 同时配置ssl.client.auth=true，也就是需要双向校验证书
 
 可以看出，这3个实例的安全性是逐渐提高的。
 
@@ -30,7 +30,7 @@ REST request failed(code -1): HTTP request failed: Couldn't connect to server
 
 但是实际登上机器查看，发现3个实例都是正常运行的。
 
-查看实例1的日志，发现有forward request to https://0.0.0.0:8083类似的日志(具体的日志找不到了，反正大概是这个意思)，
+查看实例1的日志，发现有forward request to https://0.0.0.0:8083 类似的日志(具体的日志找不到了，反正大概是这个意思)，
 
 也就是说发往实例1的请求实际上被转发到了实例3，而因为测试case1并没有client证书，所以当然请求失败。
 
