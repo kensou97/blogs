@@ -59,8 +59,8 @@ static char* calculate_decimal_literal(char *buf, size_t buf_size, int scale){
   so we can flip the buf first, then add 1.
   
   e.g. -280000
-  buf:				1111 1011 1011 1010 0100 0000 (-280000)
-  flip buf:		0000 0100 0100 0101 1011 1111	(279999)
+  buf:		1111 1011 1011 1010 0100 0000 (-280000)
+  flip buf:	0000 0100 0100 0101 1011 1111 (279999)
   flip buf+1:	0000 0100 0100 0101 1100 0000 (280000)
   */
   if(negative){
